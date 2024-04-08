@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap");
+
+:root {
+  /* Primary */
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: var(--light-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+main {
+  height: 80%;
+  width: 60%;
+  padding: 50px;
+}
+main {
+  border-radius: 25px 25px 175px 25px;
+  background-color: var(--white);
+}
+form {
+  width: 90%;
+  display: flex;
+
+  align-items: center;
+  gap: 20px;
+}
+label {
+  font-size: 1rem;
+  color: var(--smokey-grey);
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+input {
+  border: none;
+  font-size: 2rem;
+  padding-left: 16px;
+  color: var(--off-black);
+  font-weight: 700;
+  border-radius: 5px;
+
+  outline: 1px solid var(--light-grey);
+  width: 165px;
+}
+input:focus,
+input:hover {
+  outline: 1px solid var(--purple);
+  caret-color: var(--purple);
+}
+
+#errorDay,#errorMonth,#errorYear {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--light-red);
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.day,
+.month,
+.year {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 92px;
+}
+.line {
+  width: 90%;
+
+  border-bottom: 1px solid var(--smokey-grey);
+}
+.line-arrow {
+  display: flex;
+
+  align-items: center;
+}
+button {
+  background-color: var(--purple);
+  border: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.show-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.datas-container {
+  position: relative;
+  bottom: 50px;
+}
+
+.years,
+.months,
+.days {
+  display: flex;
+  gap: 5px;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 4rem;
+  max-height: 100px;
+}
+.years {
+  margin: 0;
+}
+.years > h2:first-of-type,
+.months > h2:first-of-type,
+.days > h2:first-of-type {
+    color: var(--purple);
+}
+@media screen and (max-width: 425px) {
+  main {
+    width: 90%;
+    border-radius: 25px 25px 100px 25px;
+    padding: 50px 20px 50px 20px;
+  }
+
+  form {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  label {
+    font-size: 12px;
+    color: var(--smokey-grey);
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  input {
+    width: 75px;
+    min-height: 48px;
+    border: none;
+    font-size: 1.5rem;
+    padding-left: 8px;
+  }
+  .day,
+  .month,
+  .year {
+      max-height:67px ;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .line {
+    display: none;
+  }
+  .line-arrow {
+    display: flex;
+
+    align-items: center;
+    margin-top: 20px;
+  }
+  .line-arrow::before,
+  .line-arrow::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 80%;
+    background-color: var(--light-grey);
+  }
+  #btn {
+    z-index: 2;
+    position: relative;
+    left: 39%;
+    height: 65px;
+    width: 65px;
+  }
+  #btn > img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .show-inputs {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .datas-container {
+    height: 100%;
+
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .years,
+  .months,
+  .days {
+    display: flex;
+    gap: 0px;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 2.4rem;
+    margin-bottom: -30px;
+  }
+  #errorDay,#errorMonth,#errorYear{
+      z-index: 3;
+      
+  }
+}
+@media (min-width: 425px) and (max-width: 426px) {
+    main {
+        width: 80%;
+        border-radius: 25px 25px 100px 25px;
+        padding: 50px 20px 50px 20px;
+    }
+    
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+   
+    input {
+        width: 90px;
+        min-height: 48px;
+        border: none;
+        font-size: 1.5rem;
+        padding-left: 8px;
+    }
+    .day,
+    .month,
+    .year {
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .line {
+        display: none;
+    }
+    .line-arrow {
+        display: flex;
+    
+        align-items: center;
+        margin-top: 20px;
+    }
+    .line-arrow::before,
+    .line-arrow::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 72%;
+        background-color: var(--light-grey);
+    }
+    #btn {
+        z-index: 2;
+        position: relative;
+        left: 39%;
+        height: 75px;
+        width: 75px;
+    }
+    #btn > img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .show-inputs {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .datas-container {
+        height: 100%;
+    
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #errorDay,#errorMonth,#errorYear{
+        z-index: 3;
+    }
+    .years,
+    .months,
+    .days {
+        display: flex;
+        gap: 0px;
+        font-weight: 800;
+        font-style: italic;
+        font-size: 2.60rem;
+        margin-bottom: -30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 769px) {
+    main{
+        width: 90%;
+    }
+}
