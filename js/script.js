@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (monthInput.value.trim() < 0 || monthInput.value.trim() > 12) {
       labelMonth.style.color = "hsl(0, 100%, 67%)";
       outlineInput[1].style.outline = "1px solid hsl(0, 100%, 67%)";
-      errorMonth.textContent = "Must be a valid day";
+      errorMonth.textContent = "Must be a valid month";
     }
   });
   yearInput.addEventListener("blur", () => {
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (yearInput.value.trim() < 0 || yearInput.value.trim() > maxYear) {
       labelYear.style.color = "hsl(0, 100%, 67%)";
       outlineInput[2].style.outline = "1px solid hsl(0, 100%, 67%)";
-      errorYear.textContent = "Must be a valid day";
+      errorYear.textContent = "Must be a valid year";
     }
   });
 
